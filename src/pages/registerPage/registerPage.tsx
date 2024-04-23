@@ -2,12 +2,15 @@ import React, { useState } from "react";
 import "./../../output.css";
 import logo from "./forregister.jpg";
 import styles from "./styles.module.css";
+import { ROUTES } from "../../routes/routes";
+import { Link, useNavigate } from "react-router-dom";
 
 interface RegisterPageProps {
   email: string;
   password: string;
   confirmPassword: string;
   isRememberMe: boolean;
+  passwordError: string;
 }
 
 export const RegisterPage: React.FC<any> = () => {
@@ -16,9 +19,13 @@ export const RegisterPage: React.FC<any> = () => {
     password: "",
     confirmPassword: "",
     isRememberMe: false,
+    passwordError: ""
   };
   const [formValue, setFormValue] = useState(initialState);
-  const { email, password, isRememberMe,confirmPassword } = formValue;
+  const { email, password, isRememberMe, confirmPassword } = formValue;
+  const [passwordError, setPasswordError] = useState('');
+  const navigate = useNavigate();
+
 
   const handleChangeValue = (e: any) => {
     setFormValue({ ...formValue, [e.target.name]: e.target.value });
@@ -27,15 +34,28 @@ export const RegisterPage: React.FC<any> = () => {
     setFormValue({ ...formValue, [e.target.name]: e.target.checked });
   };
 
+  const validatePassword = (password: string) => {
+    const passwordRegex = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}$/;
+    return passwordRegex.test(password);
+  };
+
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+
+    if (!validatePassword(password)) {
+      setPasswordError('The password must contain at least one number, one lowercase letter and one uppercase letter, and be at least 8 characters long.')
+    }
+    return;
+  };
+
   return (
     <div className={styles.fullscreen}>
       <div className={styles.formContainer}>
         <div className={styles.imgContainer}>
-          <img src={logo} className=" object-cover " alt="logo" />
+          <img src={logo} className="object-cover" alt="logo" />
         </div>
-        <form className={styles.loginContainer} onSubmit={() => {}}>
-          <h1 className="text-3xl font-bold text-black mb-8">Register your account
-          </h1>
+        <form className={styles.loginContainer} onSubmit={handleSubmit}>
+          <h1 className="text-3xl font-bold text-black mb-8">Register your account</h1>
           <label htmlFor="email" className="text-sm mb-2">
             Email
           </label>
@@ -44,6 +64,7 @@ export const RegisterPage: React.FC<any> = () => {
             type="email"
             placeholder="example@gmail.com"
             id="email"
+            name="email"
             value={email}
             onChange={handleChangeValue}
           />
@@ -55,17 +76,19 @@ export const RegisterPage: React.FC<any> = () => {
             type="password"
             placeholder="Enter password"
             id="password"
+            name="password"
             value={password}
             onChange={handleChangeValue}
           />
-          <label htmlFor="password" className="text-sm mb-2">
-           Confirm password
+          <label htmlFor="confirmPassword" className="text-sm mb-2">
+            Confirm password
           </label>
-            <input
+          <input
             className="rounded-md border border-slate-500 mb-4 px-4 py-2 w-full"
             type="password"
-            placeholder="confirm password"
-            id="password"
+            placeholder="Confirm password"
+            id="confirmPassword"
+            name="confirmPassword"
             value={confirmPassword}
             onChange={handleChangeValue}
           />
@@ -74,6 +97,8 @@ export const RegisterPage: React.FC<any> = () => {
             <input
               className="h-4 w-4 mr-2"
               type="checkbox"
+              id="remember"
+              name="isRememberMe"
               checked={isRememberMe}
               onChange={handleCheckboxChange}
             />
@@ -85,17 +110,20 @@ export const RegisterPage: React.FC<any> = () => {
                 Forgot password
               </a>
             </div>
+            
           </div>
+          <p className={styles.Error}>{passwordError}</p>
+
           <button
             type="submit"
             className="border bg-green-600 rounded-md hover:bg-green-400 h-12 text-white mb-8 w-full"
           >
-            Login now
+            Register now
           </button>
           <p className="text-sm text-center">
-            Don't have an account?
-            <a href="#" className="text-sm text-blue-600">
-              Create now
+            Already have an account?{" "}
+            <a href={ROUTES.login} className="text-sm text-blue-600">
+              Login
             </a>
           </p>
         </form>

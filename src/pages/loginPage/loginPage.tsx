@@ -1,7 +1,8 @@
 import React, { useState } from "react";
-import "./../../output.css";
+import { Link, useNavigate } from "react-router-dom"; // Import Link from react-router-dom
 import logo from "./forloginpage.jpg";
 import styles from "./styles.module.css";
+import { ROUTES } from "../../routes/routes";
 
 interface LoginPageProps {
   email: string;
@@ -11,20 +12,22 @@ interface LoginPageProps {
 
 export const LoginPage: React.FC<any> = () => {
   const initialState: LoginPageProps = {
-    email: '',
-    password: '',
-    isRememberMe: false
+    email: "",
+    password: "",
+    isRememberMe: false,
   };
   const [formValue, setFormValue] = useState(initialState);
   const { email, password, isRememberMe } = formValue;
-
-  const handleChangeValue = (e: any) => {
+  const navigate = useNavigate();
+  const handleChangeValue = (e: React.ChangeEvent<HTMLInputElement>) => {
     setFormValue({ ...formValue, [e.target.name]: e.target.value });
   };
-  const handleCheckboxChange = (e: any) => {
+  const handleCheckboxChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setFormValue({ ...formValue, [e.target.name]: e.target.checked });
   };
-
+  const tyty = () => {
+    navigate(ROUTES.register);
+  };
 
   return (
     <div className={styles.fullscreen}>
@@ -32,8 +35,7 @@ export const LoginPage: React.FC<any> = () => {
         <div className={styles.imgContainer}>
           <img src={logo} className=" object-cover " alt="logo" />
         </div>
-        <form className={styles.loginContainer} onSubmit={()=>{}}>
-          
+        <form className={styles.loginContainer} onSubmit={() => {}}>
           <h1 className="text-3xl font-bold text-black mb-8">
             Login to your account
           </h1>
@@ -45,6 +47,7 @@ export const LoginPage: React.FC<any> = () => {
             type="email"
             placeholder="example@gmail.com"
             id="email"
+            name="email"
             value={email}
             onChange={handleChangeValue}
           />
@@ -56,6 +59,7 @@ export const LoginPage: React.FC<any> = () => {
             type="password"
             placeholder="Enter password"
             id="password"
+            name="password"
             value={password}
             onChange={handleChangeValue}
           />
@@ -63,6 +67,8 @@ export const LoginPage: React.FC<any> = () => {
             <input
               className="h-4 w-4 mr-2"
               type="checkbox"
+              id="remember"
+              name="isRememberMe"
               checked={isRememberMe}
               onChange={handleCheckboxChange}
             />
@@ -70,9 +76,9 @@ export const LoginPage: React.FC<any> = () => {
               Remember me
             </label>
             <div className="ml-auto">
-              <a href="#" className="text-sm text-blue-600">
+              <Link to="#" className="text-sm text-blue-600">
                 Forgot password
-              </a>
+              </Link>
             </div>
           </div>
           <button
@@ -83,9 +89,9 @@ export const LoginPage: React.FC<any> = () => {
           </button>
           <p className="text-sm">
             Don't have an account?
-            <a href="#" className="text-sm text-blue-600">
+            <Link to={ROUTES.register} className="text-sm text-blue-600">
               Create now
-            </a>
+            </Link>
           </p>
         </form>
       </div>

@@ -1,13 +1,15 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
-import { LoginPage } from './pages/loginPage/loginPage';
 import { RegisterPage } from './pages/registerPage/registerPage';
+import AppRoutes from './routes';
+import { LoginPage } from './pages/loginPage/loginPage';
 
 
  const  App = () =>{
   return(
-    <RegisterPage />
+    // <></>
+    <AppRoutes/>
+    
   );
 }
 
