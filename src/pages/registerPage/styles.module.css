@@ -26,9 +26,44 @@
   width: 100vw;
   height: 100vh;
 }
-.Error{
-    color: red;
-    max-width: 300px;
-    font-size:12px;
-    margin: 0 0 10px 0;
+
+.Error {
+  color: red;
+  max-width: 300px;
+  font-size: 12px;
+  margin: 0 0 10px 0;
 }
+
+.passwordInput {
+  position: relative;
+  margin-bottom: 16px;
+}
+
+.passwordInput input {
+  position: relative;
+  padding-right: 40px; 
+ } 
+
+.showPasswordButton {
+  width:20px; height: 20px;
+  position: absolute;
+  top:10px;
+  right: 10px;
+  background: transparent;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+}
+.showPasswordButton2 {
+  width:20px; height: 20px;
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  transform: translateY(-50%);
+  background: transparent;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+}
+
+

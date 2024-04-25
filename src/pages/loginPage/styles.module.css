@@ -29,3 +29,25 @@ border-radius: 15px 0 0 15px;
     height:100vh ;
     
 }
+.passwordInput {
+    position: relative;
+    margin-bottom: 16px;
+  }
+  
+  .passwordInput input {
+    padding-right: 40px; 
+  }
+  
+  .showPasswordButton {
+    width: 20px; 
+    height: 20px;
+    position: absolute;
+    top: 70%;
+    transform: translateY(-50%);
+    right: 10px; 
+    background: transparent;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+  }
+  
