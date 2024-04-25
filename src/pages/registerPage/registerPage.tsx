@@ -3,7 +3,7 @@ import "./../../output.css";
 import logo from "./forregister.jpg";
 import styles from "./styles.module.css";
 import { ROUTES } from "../../routes/routes";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 interface RegisterPageProps {
   email: string;
@@ -23,14 +23,17 @@ export const RegisterPage: React.FC<any> = () => {
   };
   const [formValue, setFormValue] = useState(initialState);
   const { email, password, isRememberMe, confirmPassword } = formValue;
-  const [passwordError, setPasswordError] = useState('');
-  const navigate = useNavigate();
+  const [formErrors, setFormErrors]= useState({
+    email:'',
+    password:'',
+    confirmPassword:''
+  });
 
-
-  const handleChangeValue = (e: any) => {
+  const handleChangeValue = (e: React.ChangeEvent<HTMLInputElement>) => {
     setFormValue({ ...formValue, [e.target.name]: e.target.value });
   };
-  const handleCheckboxChange = (e: any) => {
+
+  const handleCheckboxChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setFormValue({ ...formValue, [e.target.name]: e.target.checked });
   };
 
@@ -39,12 +42,29 @@ export const RegisterPage: React.FC<any> = () => {
     return passwordRegex.test(password);
   };
 
+  const validateEmail = (email: string) => {
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return emailRegex.test(email);
+  };
+
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    const errors: any = {};
+
+    if (!validateEmail(email)) {
+      errors.email = 'Email contains an error example: example@gmail.com';
+    }
+
+    if (password !== confirmPassword) {
+      errors.confirmPassword = 'Password mismatch';
+    }
 
     if (!validatePassword(password)) {
-      setPasswordError('The password must contain at least one number, one lowercase letter and one uppercase letter, and be at least 8 characters long.')
+      errors.password = 'The password must contain at least one number, one lowercase letter and one uppercase letter, and be at least 8 characters long.';
     }
+
+    setFormErrors(errors);
+
     return;
   };
 
@@ -68,7 +88,8 @@ export const RegisterPage: React.FC<any> = () => {
             value={email}
             onChange={handleChangeValue}
           />
-          <label htmlFor="password" className="text-sm mb-2">
+          <label className={styles.Error}>{formErrors.email}</label>        
+          <label htmlFor="password" className="text-sm ">
             Password
           </label>
           <input
@@ -80,9 +101,10 @@ export const RegisterPage: React.FC<any> = () => {
             value={password}
             onChange={handleChangeValue}
           />
-          <label htmlFor="confirmPassword" className="text-sm mb-2">
+          <label htmlFor="confirmPassword" className="text-sm ">
             Confirm password
           </label>
+          <p className={styles.Error}>{formErrors.confirmPassword}</p>
           <input
             className="rounded-md border border-slate-500 mb-4 px-4 py-2 w-full"
             type="password"
@@ -106,13 +128,14 @@ export const RegisterPage: React.FC<any> = () => {
               Remember me
             </label>
             <div className="ml-auto">
-              <a href="#" className="text-sm text-blue-600">
+              <Link to="#" className="text-sm text-blue-600">
                 Forgot password
-              </a>
+              </Link>
             </div>
             
           </div>
-          <p className={styles.Error}>{passwordError}</p>
+          <p className={styles.Error}>{formErrors.password}</p>
+          
 
           <button
             type="submit"
@@ -122,9 +145,9 @@ export const RegisterPage: React.FC<any> = () => {
           </button>
           <p className="text-sm text-center">
             Already have an account?{" "}
-            <a href={ROUTES.login} className="text-sm text-blue-600">
+            <Link to={ROUTES.login} className="text-sm text-blue-600">
               Login
-            </a>
+            </Link>
           </p>
         </form>
       </div>

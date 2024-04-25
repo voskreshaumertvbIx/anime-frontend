@@ -1,5 +1,5 @@
 .formContainer{
-max-width: 1000px;
+max-width: clamp(500px,50%,1000px);
 max-height: 600px;
 
 display: flex;
@@ -17,7 +17,7 @@ border-radius: 15px 0 0 15px;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
+    
 
     margin: 0 auto;
 }
