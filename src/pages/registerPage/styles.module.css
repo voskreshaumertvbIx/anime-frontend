@@ -1,5 +1,5 @@
 .formContainer {
-  max-width: 1000px;
+  max-width: clamp(300px, 80%, 900px);
   max-height: 600px;
   display: flex;
   box-shadow: 0px 0px 10px gray;
@@ -8,7 +8,7 @@
 
 .imgContainer {
   overflow: hidden;
-  max-width: 50%;
+  max-width: clamp(20%, 40%, 50%);
   border-radius: 15px 0 0 15px;
 }
 
@@ -18,22 +18,41 @@
   justify-content: center;
   margin: 0 auto;
 }
-
+.loginName{
+  font-size: 1.875rem;
+  font-weight: bold;
+  color: #000; 
+  margin-bottom: 2rem;
+}
+.emailLabel{
+  font-size: 0.875rem;
+  margin-bottom: 0.5rem;
+}
+.inputText{
+  border-width: 1px;
+  border-radius:0.375rem;
+  border-color: (100, 116, 139);
+  padding: 0.5rem 1rem 0.5rem 1rem;
+  width: 100%;
+}
 .fullscreen {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 100vw;
-  height: 100vh;
+  width: 100%;
+  height:calc(100vh - 200px);
 }
 
 .Error {
   color: red;
-  max-width: 300px;
-  font-size: 12px;
+  max-width: clamp(150px, 250px, 300px);
+  font-size:  12px;
   margin: 0 0 10px 0;
 }
-
+.labelPassword{
+  font-size: 0.875rem;
+  line-height: 1.25re;
+}
 .passwordInput {
   position: relative;
   margin-bottom: 16px;
@@ -41,21 +60,24 @@
 
 .passwordInput input {
   position: relative;
-  padding-right: 40px; 
- } 
+  padding-right: 40px;
+}
 
 .showPasswordButton {
-  width:20px; height: 20px;
+  width: clamp(15px, 20px, 20px);
+  height: clamp(15px, 20px, 20px);
   position: absolute;
-  top:10px;
+  top: 10px;
   right: 10px;
   background: transparent;
   border: none;
   padding: 0;
   cursor: pointer;
 }
+
 .showPasswordButton2 {
-  width:20px; height: 20px;
+  width: clamp(15px, 20px, 20px);
+  height: clamp(15px, 20px, 20px);
   position: absolute;
   top: 50%;
   right: 10px;
@@ -65,5 +87,135 @@
   padding: 0;
   cursor: pointer;
 }
+.rememberMePos{
+  display:flex;
+  align-items:center;
+  margin-bottom: 1.5rem;
+}
+.checkboxSize{
+  width: 1rem;
+  height: 1rem;
+  margin-right: 0.5rem
+}
+.submitButton  {
+  border: 1px solid;
+  background-color:  #34D399;
+  border-radius: 0.375rem;
+  height: 3rem;
+  color: #fff;
+  margin-bottom: 2rem;
+  width: 100%;
+}
+
+.submitButton :hover {
+  background-color: #42dd7d;
+}
+.footerP{
+  font-size: 0.875rem;
+    line-height: 1.25rem;
+    text-align: center;
+    
+
+}
+.loginText{
+  font-size: 0.875rem/* 14px */;
+    line-height: 1.25rem/* 20px */;
+    color:blue;
+}
+
+/* @media screen and (max-width: 500px) {
+  .formContainer {
+    position: relative;
+    flex-direction: column;
+    background-color: transparent;
+    overflow: hidden;
+    color: white;
+    
+  }
+
+  .formContainer::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
+    background-image: url('./../../img/forphone.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    filter: blur(5px);
+  }
+
+  .imgContainer {
+    display: none;
+  }
+
+  .loginName {
+    color:white;
+    mix-blend-mode: difference;
+  }
+  .forgotPassword, .loginText {
+    color: white;
+    mix-blend-mode: difference;
+
+  }
+  .loginContainer {
+    padding: 20px;
+  }
+  
+}
+
+@media screen and (max-height: 400px) {
+  .loginName {
+    font-size: 0.875rem;
+    margin-bottom: 0.25rem;
+  }
+  
+  .inputText {
+    font-size: 0.625rem; 
+    padding: 0.25rem 0.5rem; 
+    height: 1.75rem;
+  }
+  
+  .Error {
+    font-size: 8px;
+    margin: 0 0 5px 0;
+  }
+  
+  .rememberMePos {
+    font-size: 0.4rem; 
+    margin: 0;
+  }
+  
+  .checkboxSize {
+    width: 0.5rem;
+    height: 0.5rem;
+  }
+  
+  .submitButton {
+    border: 1px solid;
+    background-color: #34D399;
+    border-radius: 0.25rem;
+    height: 1.5rem;
+    color: #fff;
+    margin-bottom: 0.5rem;
+    width: 100%;
+    max-width: 300px;
+  }
+  
+  .forgotPassword,
+  .alreadyHaveAccount {
+    font-size: 0.4rem; 
+  }
+}
 
 
+   */
+
+
+
+
+
+ 

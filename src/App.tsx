@@ -3,13 +3,16 @@ import './App.css';
 import { RegisterPage } from './pages/registerPage/registerPage';
 import AppRoutes from './routes';
 import { LoginPage } from './pages/loginPage/loginPage';
+import {Header} from './pages/header/header';
 
 
  const  App = () =>{
   return(
-    // <></>
+    <>
+    <Header />
     <AppRoutes/>
     
+    </>
   );
 }
 

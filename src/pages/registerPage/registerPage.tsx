@@ -86,14 +86,14 @@ export const RegisterPage: React.FC<any> = () => {
           <img src={logo} className="object-cover" alt="logo" />
         </div>
         <form className={styles.loginContainer} onSubmit={handleSubmit}>
-          <h1 className="text-3xl font-bold text-black mb-8">
+          <h1 className={styles.loginName} >
             Register your account
           </h1>
-          <label htmlFor="email" className="text-sm mb-2">
+          <label htmlFor="email" className={styles.emailLabel}>
             Email
           </label>
           <input
-            className="rounded-md border border-slate-500  px-4 py-2 w-full"
+            className={styles.inputText}
             type="email"
             placeholder="example@gmail.com"
             id="email"
@@ -102,12 +102,12 @@ export const RegisterPage: React.FC<any> = () => {
             onChange={handleChangeValue}
           />
           <label className={styles.Error}>{formErrors.email}</label>
-          <label htmlFor="password" className="text-sm ">
+          <label htmlFor="password" className={styles.labelPassword}>
             Password
           </label>
           <div className={styles.passwordInput}>
             <input
-              className="rounded-md border border-slate-500  px-4 py-2 w-full"
+              className={styles.inputText}
               type={showPassword ? "text" :  "password"}
               placeholder="Enter password"
               id="password"
@@ -129,7 +129,7 @@ export const RegisterPage: React.FC<any> = () => {
           </label>
           <div className={styles.passwordInput}>
             <input
-              className="rounded-md border border-slate-500  px-4 py-2 w-full"
+              className={styles.inputText}
               type={showPassword ? "text" : "password"}
               placeholder="Confirm password"
               id="confirmPassword"
@@ -145,35 +145,30 @@ export const RegisterPage: React.FC<any> = () => {
               <img src={showPassword ? showPass: hidePassword} alt="Button Icon" />
             </button>
           </div>
-          <div className="flex items-center mb-6">
+          <div className={styles.rememberMePos}>
             <input
-              className="h-4 w-4 mr-2"
+              className={styles.checkboxSize}
               type="checkbox"
               id="remember"
               name="isRememberMe"
               checked={isRememberMe}
               onChange={handleCheckboxChange}
             />
-            <label htmlFor="remember" className="text-sm">
+            <label htmlFor="remember" className={styles.rememberText}>
               Remember me
             </label>
-            <div className="ml-auto">
-              <Link to="#" className="text-sm text-blue-600">
-                Forgot password
-              </Link>
-            </div>
           </div>
           <p className={styles.Error}>{formErrors.password}</p>
 
           <button
             type="submit"
-            className="border bg-green-600 rounded-md hover:bg-green-400 h-12 text-white mb-8 w-full"
+            className={styles.submitButton }
           >
             Register now
           </button>
-          <p className="text-sm text-center">
+          <p className={styles.footerP}>
             Already have an account?{" "}
-            <Link to={ROUTES.login} className="text-sm text-blue-600">
+            <Link to={ROUTES.login} className={styles.loginText}>
               Login
             </Link>
           </p>

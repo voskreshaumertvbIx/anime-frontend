@@ -1,0 +1,53 @@
+.header_container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: white;
+  height: 100px;
+  max-width: 1080px;
+}
+
+.logo_container {
+  display: flex;
+  align-items: center;
+}
+
+.menu_container {
+  display: flex;
+  align-items: center; 
+  
+}
+
+.menu_item {
+  margin-right: 20px;
+  text-decoration: none; 
+  color: black; 
+}
+
+.menu_item:last-child {
+  margin-right: 0; 
+}
+
+.site_logo{
+  display: flex;
+  justify-content: left;
+  width: 60px;
+  height: 60px;
+
+  
+}
+.header_login{
+  display: flex;
+  align-items:center;
+  justify-content: center;
+  width: 60px;
+  height: 60px;
+  
+}
+.loginicon{
+  
+  width: 30px;
+  height: 30px;
+}
+
+
