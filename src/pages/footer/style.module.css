@@ -1,15 +1,21 @@
 /* style.module.css */
-
+.footer{
+  display: flex;
+  justify-content: center;
+  align-items:end;
+  width: 100vw;
+  background-color: rgba(255, 255, 255, 0.199);
+  position: absolute;
+  bottom:0;
+}
 .footer_container {
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 
-    justify-content: center;
-    align-items: center;
-   
-    height: 100px;
-    background-color: antiquewhite;
-    margin-top: auto;
+  height: 100px;
+  width: clamp(300px,70%,1080px);
     
   }
   
@@ -26,6 +32,7 @@
   .selfImg {
     width: 20px;
     height: 20px;
+    color:white;
   }
   
   .footer_text {
@@ -34,8 +41,10 @@
     align-items:center;
 
    
-    color: black;
+    color: white;
     font-size: 14px;
     
   }
-  
+  .heart {
+    margin: 0 2px 0 2px;
+  }

@@ -18,6 +18,7 @@
   overflow: hidden;
   max-width: clamp(20%, 40%, 50%);
   border-radius: 15px 0 0 15px;
+  
 }
 
 .loginContainer {
@@ -30,7 +31,7 @@
 .loginName {
   font-size: 1.875rem;
   font-weight: bold;
-  color: #000;
+  color: white;
   margin-bottom: 2rem;
 }
 .email_container{
@@ -40,6 +41,7 @@
 .emailLabel {
   font-size: 0.875rem;
   margin-bottom: 0.5rem;
+  color:white;
 }
 
 .inputText {
@@ -57,7 +59,8 @@
 
 .labelPassword {
   font-size: 0.875rem;
-  line-height: 1.25re;
+  line-height: 1.25rem;
+  color:white;
 }
 
 .passwordInput input {
@@ -84,6 +87,7 @@
 }
 .labelCheckbox{
   font-size: 14px;
+  color:white
 }
 .checkboxSize {
   width: 1rem;
@@ -109,15 +113,16 @@
   font-size: 0.875rem;
   line-height: 1.25rem;
   text-align: center;
+  color:white;
 }
 
 .forgotPassword {
   margin-left: 100px;
   font-size: 0.875rem;
-  color: #2563eb;
+  color: #f2a663;
 }
 
 .loginText {
   font-size: 0.875rem;
-  color: blue;
+  color: #f2a663;
 }

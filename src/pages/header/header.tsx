@@ -1,13 +1,14 @@
 import React from "react";
-import sitelogo from "./../../img/icons/ultra_4k_logo.jpg";
+import sitelogo from "./../../img/icons/logo_mega_ultra_muha_.png";
 import styles from "./styles.module.css";
 import { CiLogin } from "react-icons/ci";
 import { ROUTES } from "../../routes/routes";
 
 export const Header = () => {
   return (
+    <div className={styles.header}>
     <div className={styles.header_container}>
-      <a href="#" className={styles.site_logo}>
+      <a href={ROUTES.mainpage} className={styles.site_logo}>
         <img src={sitelogo} className={styles.img_size} alt="site logo" />
       </a>
 
@@ -28,6 +29,6 @@ export const Header = () => {
       <a href={ROUTES.login} className={styles.header_login}>
         <CiLogin className={styles.loginicon} />
       </a>
-    </div>
+    </div></div>
   );
 };

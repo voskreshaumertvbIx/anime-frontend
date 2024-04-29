@@ -9,6 +9,7 @@ import { FaFaceLaughSquint } from "react-icons/fa6";
 
 export const Footer = () => {
   return (
+    <div className={styles.footer}>
     <div className={styles.footer_container}>
       <div className={styles.socialIcon_footer}>
         <a
@@ -36,10 +37,10 @@ export const Footer = () => {
           <FaFaceLaughSquint className={styles.selfImg} />
         </a>
       </div>
-      <span className={styles.footer_text}>
+      <p className={styles.footer_text}>
         Copyright ©2024 All rights reserved | This template is made with
-        <FaHeart /> by Ukrainian emo boys
-      </span>
-    </div>
+         <FaHeart className={styles.heart}/>  by Ukrainian emo boys
+      </p>
+    </div></div>
   );
 };

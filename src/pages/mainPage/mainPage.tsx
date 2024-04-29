@@ -33,7 +33,11 @@ import { MdNavigateNext } from "react-icons/md";
     infinite: true,
     speed: 500,
     slidesToShow: 1,
-    slidesToScroll: 1
+    slidesToScroll: 1,
+    autoplaySpeed:6000,
+    arrows:false,
+    
+    
   };
 
   return (

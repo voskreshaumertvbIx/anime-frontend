@@ -8,12 +8,14 @@ import { Footer } from './pages/footer/footer';
 import  MainPage  from './pages/mainPage/mainPage';
 
 
+
  const  App = () =>{
   return(
     <>
     <Header />
-    <AppRoutes/>
+    <main><AppRoutes/></main>
     <Footer/>
+    <div className="background_image"></div>
     </>
   );
 }
