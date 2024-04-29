@@ -18,6 +18,8 @@
 *::before,
 *::after {
   box-sizing: border-box;
+  z-index: 0;
+  
 }
 
 /* Fix mobile Safari increase font-size on landscape mode */
@@ -118,6 +120,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  /* background-image: url(https://wallpapercave.com/wp/wp9695650.jpg) */
 }
 html{
   display:flex;

@@ -1,0 +1,43 @@
+.slider_container {
+  position: relative;
+}
+.button_collaider {
+  position: absolute;
+  display: flex;
+  justify-content: space-between;
+  width: calc(100% + 30px);
+  top: 50%;
+  transform: translate(-15px,-50%);
+}
+
+.img_collaider {
+  width: 30px;
+  height: 30px;
+  
+  z-index: 2;
+}
+.next_button,
+.previous_button {
+  position: relative;
+  
+}
+
+.next_button::after,
+.previous_button::after {
+  content: "";
+  width: 200%;
+  height: 200%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  
+  transform: translate(-25%,-25%) rotate(-45deg) ;
+  
+    z-index: -1;
+  background-color: white;
+}
+.previous_button::after{
+transform:  translate(-25%,-25%) rotate(-45deg);
+
+
+}
