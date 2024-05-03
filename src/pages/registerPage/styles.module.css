@@ -34,6 +34,7 @@
   border-color: (100, 116, 139);
   padding: 0.5rem 1rem 0.5rem 1rem;
   width: 100%;
+  
 }
 .fullscreen {
   display: flex;
@@ -56,13 +57,18 @@
 .passwordInput {
   position: relative;
   margin-bottom: 16px;
+  
 }
 
 .passwordInput input {
   position: relative;
   padding-right: 40px;
-}
+  
 
+}
+input{
+  background-color:transparent;
+}
 .showPasswordButton {
   width: clamp(15px, 20px, 20px);
   height: clamp(15px, 20px, 20px);

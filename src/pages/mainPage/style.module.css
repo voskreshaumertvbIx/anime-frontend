@@ -37,3 +37,45 @@
   background-color: rgba(255, 255, 255, 0.3);
   border-radius: 25% 35%;
 }
+
+
+
+/* style.module.css */
+
+.slideContainer {
+  position: relative; /* Обязательно */
+}
+
+.description_slider_container {
+  position: absolute; /* Позиционируем относительно родителя .slideContainer */
+  bottom: 10px; /* Отступ от нижнего края */
+  left: 10px; /* Отступ от левого края */
+  background-color: rgba(0, 0, 0, 0.5); /* Прозрачный фон */
+  color: white; /* Цвет текста */
+  padding: 10px; /* Поля вокруг текста */
+}
+
+.name_anime_slider {
+  font-size: 24px; /* Размер заголовка */
+  margin-bottom: 5px; /* Отступ между заголовком и описанием */
+}
+
+.description_anime_slider {
+  font-size: 18px; /* Размер описания */
+  margin-bottom: 5px; /* Отступ между описанием и кнопкой */
+}
+
+.button_watch_slider {
+  font-size: 16px; /* Размер кнопки */
+  padding: 5px 10px; /* Поля вокруг текста кнопки */
+  background-color: #007bff; /* Цвет фона кнопки */
+  border: none; /* Убираем границу */
+  color: white; /* Цвет текста кнопки */
+  cursor: pointer; /* Указатель при наведении */
+}
+
+.button_watch_slider:hover {
+  background-color: #0056b3; /* Изменение цвета фона при наведении */
+}
+
+
