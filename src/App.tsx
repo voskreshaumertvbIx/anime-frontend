@@ -19,9 +19,6 @@ const App = () => {
         <AppRoutes />
       </main>
       <Footer />
-      <ToastContainer
-       
-      />
       <div className="background_image"></div>
     </>
   );

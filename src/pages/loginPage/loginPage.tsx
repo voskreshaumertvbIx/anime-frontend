@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import logo from "./../../img/forloginpage.jpg";
 import styles from "./styles.module.css";
 import { ROUTES } from "../../routes/routes";
@@ -23,11 +23,9 @@ export const LoginPage: React.FC<any> = () => {
   };
   const [formValue, setFormValue] = useState(initialState);
   const { email, password, isRememberMe } = formValue;
-  const navigate = useNavigate();
-  const [isPasswordVisible, setPasswordVisibility] = useState(false); // изменение имени переменной
-  
 
-  ///////////////////////////////////API
+  const [isPasswordVisible, setPasswordVisibility] = useState(false);
+
   const [
     loginUser,
     { isLoading: userLoading, data: userData, error: userError },
@@ -36,6 +34,7 @@ export const LoginPage: React.FC<any> = () => {
   const handleChangeValue = (e: React.ChangeEvent<HTMLInputElement>) => {
     setFormValue({ ...formValue, [e.target.name]: e.target.value });
   };
+  
   const handleCheckboxChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setFormValue({ ...formValue, [e.target.name]: e.target.checked });
   };
@@ -43,9 +42,10 @@ export const LoginPage: React.FC<any> = () => {
   const toggleShowPassword = () => {
     setPasswordVisibility(!isPasswordVisible);
   };
+
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    const errors: any = {};
+
     let errorOccurred = false;
 
     switch (true) {
@@ -67,14 +67,17 @@ export const LoginPage: React.FC<any> = () => {
         );
         errorOccurred = true;
         break;
-
-        default:break;
+      default:
+        break;
     }
 
     if (!errorOccurred) {
       try {
-        const response: { data: any } | { error: any } = await loginUser({ email, password });
-    
+        const response: { data: any } | { error: any } = await loginUser({
+          email,
+          password,
+        });
+console.log(response)
         if ("error" in response) {
           if (response.error.data && response.error.data.message) {
             toast.error(response.error.data.message);
@@ -88,7 +91,7 @@ export const LoginPage: React.FC<any> = () => {
         toast.error("Failed to login. Please try again.");
       }
     }
-  };    
+  };
 
   return (
     <div className={styles.fullscreen}>
@@ -112,14 +115,14 @@ export const LoginPage: React.FC<any> = () => {
               onChange={handleChangeValue}
             />
           </div>
-          
+
           <div className={styles.passwordInput}>
             <label htmlFor="password" className={styles.labelPassword}>
               Password
             </label>
             <input
               className={styles.inputText}
-              type={isPasswordVisible ? "text" : "password"} // изменение типа в зависимости от состояния видимости
+              type={isPasswordVisible ? "text" : "password"}
               placeholder="Enter password"
               id="password"
               name="password"
@@ -132,13 +135,11 @@ export const LoginPage: React.FC<any> = () => {
               onClick={toggleShowPassword}
             >
               <img
-                src={isPasswordVisible ? showPass : hidePassword} // изменение переменной
+                src={isPasswordVisible ? hidePassword : showPass}
                 alt="Button Icon"
               />
             </button>
-          
           </div>
-         
 
           <div className={styles.rememberMePos}>
             <input
@@ -173,9 +174,6 @@ export const LoginPage: React.FC<any> = () => {
       <ToastContainer
         position="top-center"
         autoClose={5000}
-        hideProgressBar={false}
-        newestOnTop={false}
-        closeOnClick={true}
         theme="colored"
       />
     </div>

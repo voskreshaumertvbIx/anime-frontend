@@ -126,9 +126,3 @@
   font-size: 0.875rem;
   color: #f2a663;
 }
-.Error {
-  color: red;
-  max-width: clamp(150px, 250px, 300px);
-  font-size:  12px;
-  margin: 0 0 10px 0;
-}
