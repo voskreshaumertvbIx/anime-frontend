@@ -1,5 +1,6 @@
-export const ROUTES= {
+export const ROUTES = {
     login: "/login",
     register: '/register',
     mainpage: '/',
-}
+    anime: '/anime/:id'
+};

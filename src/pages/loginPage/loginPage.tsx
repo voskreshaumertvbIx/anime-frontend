@@ -86,6 +86,8 @@ console.log(response)
           }
         } else {
           toast.success("Login successful!");
+          localStorage.setItem('access_token', response.data.access_token);
+          localStorage.setItem('refresh_token', response.data.refresh_token);
         }
       } catch (error) {
         toast.error("Failed to login. Please try again.");
@@ -179,3 +181,5 @@ console.log(response)
     </div>
   );
 };
+
+

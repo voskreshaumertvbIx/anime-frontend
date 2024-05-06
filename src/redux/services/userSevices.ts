@@ -8,9 +8,54 @@ import type {
   FetchBaseQueryError,
 } from '@reduxjs/toolkit/query'
 
+const baseQuery = fetchBaseQuery({
+  baseUrl: 'http://localhost:5000',
+  prepareHeaders: (headers, { getState }) => {
+    const token = localStorage.getItem('access_token');
+    if (token) {
+      headers.set('Authorization', `Bearer ${token}`);
+    }
+    return headers;
+  }
+});
+
+
+export const baseQueryWithReauth: BaseQueryFn<
+  string | FetchArgs,
+  unknown,
+  FetchBaseQueryError
+> = async (args, api, extraOptions) => {
+  console.log("Making request with args:", args);
+  let result = await baseQuery(args, api, extraOptions);
+  console.log("Result of initial request:", result);
+
+  if (result.error && result.error.status === 401) {
+    console.log("Access token expired, attempting to refresh...");
+    
+    const refreshResult = await baseQuery('/auth/refresh', api, extraOptions);
+    console.log("Refresh token result:", refreshResult);
+
+
+    if (refreshResult.data) {
+      console.log("Token refreshed successfully");
+      const { access_token, refresh_token } = refreshResult.data as ITokens;
+      localStorage.setItem('access_token', access_token);
+      localStorage.setItem('refresh_token', refresh_token);
+      
+      
+      result = await baseQuery(args, api, extraOptions);
+    } else {
+      console.log("Refresh token failed");
+
+    }
+  }
+  return result;
+}
+
+
 export const UserServicesApi = createApi({
   reducerPath: "UserServicesApi",
-  baseQuery: fetchBaseQuery({ baseUrl: "http://localhost:5000" }),
+  baseQuery: baseQueryWithReauth,
   endpoints: (build) => ({
     registerUser: build.mutation<null, IAuth>({
       query: (userData: IAuth) => ({
@@ -30,30 +75,7 @@ export const UserServicesApi = createApi({
   }),
 });
 
-const baseQuery = fetchBaseQuery({ baseUrl: 'http://localhost:5000' })
 
-const baseQueryWithReauth: BaseQueryFn<
-  string | FetchArgs,
-  unknown,
-  FetchBaseQueryError
-> = async (args, api, extraOptions) => {
-  let result = await baseQuery(args, api, extraOptions)
-  if (result.error && result.error.status === 401) {
-    const refreshResult = await baseQuery('/refreshToken', api, extraOptions)
-    if (refreshResult.data) {
-     
-      const { access, refresh } = refreshResult.data as { access: string, refresh: string };
-      localStorage.setItem('accessToken', access);
-      localStorage.setItem('refreshToken', refresh);
-      
-      
-      result = await baseQuery(args, api, extraOptions)
-    } else {
-      ///logOut
-    }
-  }
-  return result
-}
 
 
 
