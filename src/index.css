@@ -1,138 +1,102 @@
-/***
-    The new CSS reset - version 1.11.2 (last updated 15.11.2023)
-    GitHub page: https://github.com/elad2412/the-new-css-reset
-***/
+/* Variables */
+:root {
+  --backgroundColor: #000;
+  --textColor: #fff;
 
-/*
-    Remove all the styles of the "User-Agent-Stylesheet", except for the 'display' property
-    - The "symbol *" part is to solve Firefox SVG sprite bug
-    - The "html" element is excluded, otherwise a bug in Chrome breaks the CSS hyphens property (https://github.com/elad2412/the-new-css-reset/issues/36)
- */
- *:where(:not(html, iframe, canvas, img, svg, video, audio):not(svg *, symbol *)) {
-  /* all: unset; */
-  display: revert;
+  --containerSize: clamp(300px, 80%, 1200px);
 }
 
-/* Preferred box-sizing value */
+/* Box sizing */
 *,
 *::before,
 *::after {
   box-sizing: border-box;
-  z-index: 0;
-  
+
+  font-family: "Poppins", sans-serif;
+  color: #fff;
 }
 
-/* Fix mobile Safari increase font-size on landscape mode */
-html {
-  -moz-text-size-adjust: none;
-  -webkit-text-size-adjust: none;
-  text-size-adjust: none;
+/* Remove paddings */
+ul[class],
+ol[class] {
+  padding: 0;
 }
 
-/* Reapply the pointer cursor for anchor tags */
-a, button {
-  cursor: revert;
+/* Remove margins */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+ul[class],
+ol[class],
+li,
+figure,
+figcaption,
+blockquote,
+dl,
+dd {
+  margin: 0;
 }
 
-/* Remove list styles (bullets/numbers) */
-ol, ul, menu, summary {
+/* Main body changes */
+body {
+  min-height: 100vh;
+  scroll-behavior: smooth;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+
+  background-color: #000;
+}
+
+/* UL and OL class styles reset */
+ul[class],
+ol[class] {
   list-style: none;
 }
 
-/* For images to not be able to exceed their container */
+/* Link reset */
+a,
+a:not([class]) {
+  text-decoration: none;
+  text-decoration-skip-ink: none;
+}
+
+/* Button reset */
+input,
+button,
+button:not([class]) {
+  background: none;
+  border: none;
+  cursor: pointer;
+
+  text-decoration: none;
+  text-decoration-skip-ink: none;
+}
+
+/* Image */
 img {
-  max-inline-size: 100%;
-  max-block-size: 100%;
+  max-width: 100%;
+  display: block;
 }
 
-/* removes spacing between cells in tables */
-table {
-  border-collapse: collapse;
+/* Article */
+article > * + * {
+  margin-top: 1em;
 }
 
-/* Safari - solving issue when using user-select:none on the <body> text input doesn't working */
- textarea {
-  -webkit-user-select: auto;
+/* Fonts */
+input,
+button,
+textarea,
+select {
+  font: inherit;
 }
 
-/* revert the 'white-space' property for textarea elements on Safari */
-textarea {
-  white-space: revert;
-}
+/* Main styles */
 
-/* minimum style to allow to style meter element */
-meter {
-  -webkit-appearance: revert;
-  appearance: revert;
-}
-
-/* preformatted text - use only for this feature */
-:where(pre) {
-  all: revert;
-  box-sizing: border-box;
-}
-
-/* reset default text opacity of input placeholder */
-::placeholder {
-  color: unset;
-}
-
-/* fix the feature of 'hidden' attribute.
- display:revert; revert to element instead of attribute */
-:where([hidden]) {
-  display: none;
-}
-
-/* revert for bug in Chromium browsers
- - fix for the content editable attribute will work properly.
- - webkit-user-select: auto; added for Safari in case of using user-select:none on wrapper element*/
-:where([contenteditable]:not([contenteditable="false"])) {
-  -moz-user-modify: read-write;
-  -webkit-user-modify: read-write;
-  overflow-wrap: break-word;
-  -webkit-line-break: after-white-space;
-  -webkit-user-select: auto;
-}
-
-/* apply back the draggable feature - exist only in Chromium and Safari */
-:where([draggable="true"]) {
-  -webkit-user-drag: element;
-}
-
-/* Revert Modal native behavior */
-:where(dialog:modal) {
-  all: revert;
-  box-sizing: border-box;
-}
-
-/* Remove details summary webkit styles */
-::-webkit-details-marker {
-  display: none;
-}
-body {
-  display:flex;
-  justify-content: center;
-  flex-direction: column;
-  
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  
-}
-html{
-  display:flex;
-  justify-content: center;
-  
-}
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
-}
-main{
-  margin: auto;
-  max-width: 1080px;
-
+.container {
+  margin: 0 auto;
+  max-width: var(--containerSize);
 }

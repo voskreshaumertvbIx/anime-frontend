@@ -1,0 +1,179 @@
+.header {
+  max-width: var(--containerSize);
+  height: clamp(50px, 8vw, 80px);
+
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navBar {
+  margin: auto 0;
+}
+
+.navLink {
+  margin-right: 16px;
+  position: relative;
+
+  font-weight: 600;
+}
+
+.navLink:last-of-type {
+  margin-right: 0;
+}
+
+.activePage::after {
+  content: "";
+  width: 40%;
+  height: 4px;
+  border-radius: 3px;
+
+  position: absolute;
+  bottom: -4px;
+  left: 50%;
+  transform: translateX(-50%);
+
+  background-color: red;
+}
+
+.searchBar {
+  position: relative;
+
+  background-color: var(--textColor);
+  border: 1px solid var(--textColor);
+  border-radius: 2.5rem;
+}
+
+.searchInput {
+  width: clamp(250px, 40vw, 450px);
+  padding: 8px 20px;
+
+  border-radius: 2.5rem;
+  color: var(--backgroundColor);
+}
+
+.searchIcon {
+  position: absolute;
+  right: 18px;
+  top: 50%;
+  transform: translateY(-50%);
+
+  font-size: 1.4rem;
+}
+
+.searchInput::placeholder {
+  color: var(--backgroundColor);
+}
+
+.searchIcon * {
+  color: var(--backgroundColor);
+}
+
+.userInterface {
+  margin-right: 16px;
+  display: flex;
+
+  font-weight: 600;
+}
+
+.loginLink {
+  padding: 8px 16px;
+
+  margin-right: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: 1px solid var(--textColor);
+  border-radius: 1.4rem;
+}
+
+.loginIcon {
+  height: 1.2rem;
+
+  margin-left: 1rem;
+}
+
+.notificationButton {
+  position: relative;
+}
+
+.hasNotification::after {
+  content: "";
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+
+  position: absolute;
+  top: 24%;
+  right: 27%;
+
+  background-color: red;
+}
+
+.notificationIcon {
+  display: block;
+  height: 30px;
+  width: 30px;
+}
+
+/* .header {
+  display: flex;
+  justify-content: center;
+  width: 100vw;
+  background-color: rgba(255, 255, 255, 0.199);
+}
+.header_container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  height: 100px;
+  width: clamp(300px,70%,1080px);
+}
+
+.logo_container {
+  display: flex;
+  align-items: center;
+}
+
+.menu_container {
+  display: flex;
+  align-items: center;
+}
+
+.menu_item {
+  margin-right: 20px;
+  text-decoration: none;
+  font-weight: bold;
+  color: white;
+
+}
+
+.menu_item:last-child {
+  margin-right: 0;
+}
+
+.site_logo {
+  display: flex;
+  justify-content: left;
+  width: 60px;
+  height: 60px;
+}
+.header_login {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 60px;
+  height: 60px;
+}
+.loginicon {
+  width: 30px;
+  height: 30px;
+  color:white;
+  
+}
+.img_size{
+color:white;
+} */

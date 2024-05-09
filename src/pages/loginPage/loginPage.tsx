@@ -6,7 +6,7 @@ import { ROUTES } from "../../routes/routes";
 import showPass from "./../../img/icons/show.png";
 import hidePassword from "./../../img/icons/hide.png";
 import { useLoginUserMutation } from "../../redux/services/userSevices";
-import { validateEmail, validatePassword } from "../validation/validationAuth";
+import { validateEmail, validatePassword } from "../../services/validation/validationAuth";
 import { ToastContainer, toast } from "react-toastify";
 
 interface LoginPageProps {
@@ -34,7 +34,7 @@ export const LoginPage: React.FC<any> = () => {
   const handleChangeValue = (e: React.ChangeEvent<HTMLInputElement>) => {
     setFormValue({ ...formValue, [e.target.name]: e.target.value });
   };
-  
+
   const handleCheckboxChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setFormValue({ ...formValue, [e.target.name]: e.target.checked });
   };
@@ -77,7 +77,7 @@ export const LoginPage: React.FC<any> = () => {
           email,
           password,
         });
-console.log(response)
+        console.log(response)
         if ("error" in response) {
           if (response.error.data && response.error.data.message) {
             toast.error(response.error.data.message);

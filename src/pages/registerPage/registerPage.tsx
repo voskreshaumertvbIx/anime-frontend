@@ -7,7 +7,7 @@ import styles from "./styles.module.css";
 import { ROUTES } from "../../routes/routes";
 import { Link } from "react-router-dom";
 import { useRegisterUserMutation } from "../../redux/services/userSevices";
-import { validateEmail, validatePassword } from "../validation/validationAuth";
+import { validateEmail, validatePassword } from "../../services/validation/validationAuth";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
@@ -17,7 +17,7 @@ export const RegisterPage: React.FC<any> = () => {
     password: "",
     confirmPassword: "",
     isRememberMe: false,
-    
+
   };
   const [formValue, setFormValue] = useState(initialState);
   const { email, password, isRememberMe, confirmPassword } = formValue;
@@ -73,8 +73,8 @@ export const RegisterPage: React.FC<any> = () => {
 
     if (!errorOccurred) {
       try {
-        const response: { data: any } | { error: any } = await registerUser({email, password  });
-       
+        const response: { data: any } | { error: any } = await registerUser({ email, password });
+
         if ("error" in response) {
           if (response.error.data && response.error.data.message) {
             toast.error(response.error.data.message);

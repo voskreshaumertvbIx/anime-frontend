@@ -1,6 +1,10 @@
 export const ROUTES = {
-    login: "/login",
-    register: '/register',
-    mainpage: '/',
-    anime: '/anime/:id'
+  mainpage: '/',
+
+  login: "/login",
+  register: '/register',
+
+  anime: '/anime/:id',
+  genre: '/catalog?genre=fantasy',
+  year: '/catalog?year=2024'
 };
