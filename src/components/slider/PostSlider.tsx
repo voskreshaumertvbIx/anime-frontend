@@ -2,7 +2,7 @@ import Slider, { Settings } from "react-slick";
 
 import styles from './styles.module.css'
 
-import { posts } from '../../data/posts.json'
+import posts from '../../data/posts.json'
 import SliderItem from "../sliderItem/SliderItem";
 import { IPost } from "../../data/intefaces/IPost";
 
@@ -10,29 +10,28 @@ const PostSlider = () => {
   const sliderSettings: Settings = {
     dots: true,
     infinite: true,
-    speed: 500,
+    autoplay: true,
+    autoplaySpeed: 8000,
+    pauseOnHover: true,
+    speed: 1000,
     slidesToShow: 1,
     slidesToScroll: 1,
-    appendDots: dots => (
-      <div
-        className={styles.dotsContainer}
-      >
-        <ul style={{ margin: "0px" }}> {dots} </ul>
-      </div>
-    ),
+    arrows: false,
     customPaging: i => (
       <div
         className={styles.sliderDot}
       >
-        {i + 1}
       </div>
-    )
+    ),
+    dotsClass: "dotsContainer"
   };
 
   return (
     <section className={styles.sliderContainer}>
+      <div className={styles.shadow}></div>
       <Slider {...sliderSettings}>
-        {posts.map((post) => <SliderItem key={post.post_id} post={post as IPost} />)}
+        {posts.posts.map((post) =>
+          <SliderItem key={post.post_id} post={post as IPost} />)}
       </Slider>
     </section>
   )

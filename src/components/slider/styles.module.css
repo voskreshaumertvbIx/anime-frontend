@@ -1,5 +1,19 @@
-.dotsContainer {
+.sliderContainer {
+  z-index: 1;
+}
+
+.dotsContainer li {
+  display: block;
 }
 
 .sliderDot {
+  width: 12px;
+  height: 12px;
+
+  margin: 0 5px;
+
+  background-color: var(--textColor);
+  border-radius: 50%;
+
+  transition: all 0.3s linear;
 }

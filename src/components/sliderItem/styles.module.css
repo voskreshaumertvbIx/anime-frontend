@@ -1,5 +1,80 @@
 .sliderItem {
-  width: 100vw;
-  aspect-ratio: 16 / 9;
-  background-color: #fff;
+  position: relative;
+  height: 800px;
+
+  box-shadow: inset 400px -200px 200px 0 rgba(0, 0, 0, 0.8);
+}
+
+.image {
+  width: 100%;
+
+  position: absolute;
+  z-index: -3;
+}
+
+.flexEnd {
+  height: 100%;
+
+  display: flex;
+}
+
+.content {
+  width: 40%;
+
+  display: flex;
+  flex-direction: column;
+  margin: 0 0 50px 50px;
+}
+
+.postTitle {
+  font-size: 60px;
+  font-weight: 700;
+  margin-top: auto;
+}
+
+.description {
+  margin-bottom: 40px;
+}
+
+.tagsContainer {
+  display: flex;
+  align-items: center;
+  justify-self: center;
+  margin: 20px 0;
+}
+
+.tag {
+  padding: 2px 8px;
+
+  margin-right: 10px;
+
+  border: 1px solid var(--textColor);
+  border-radius: 5px;
+}
+
+.buttonsContainer {
+  display: flex;
+  align-items: center;
+}
+
+.buttonHref {
+  padding: 12px 24px;
+
+  border: 1px solid var(--textColor);
+  border-radius: 24px;
+
+  display: flex;
+  align-items: center;
+}
+
+.addToList {
+  margin-left: 30px;
+  display: flex;
+  align-items: center;
+}
+
+.hrefIcon {
+  margin-right: 10px;
+  height: 30px;
+  width: 30px;
 }
