@@ -15,11 +15,11 @@ const App = () => {
   return (
     <>
       <Header />
-      {/* 
+      
         <AppRoutes />
 
       <Footer />
-      <div className="background_image"></div> */}
+      <div className="background_image"></div>
     </>
   );
 };
