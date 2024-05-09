@@ -67,29 +67,5 @@ export const Header = () => {
         </button>
       </div>
     </header>
-    // <div className={styles.header}>
-    // <div className={styles.header_container}>
-    //   <a href={ROUTES.mainpage} className={styles.site_logo}>
-    //     <img src={sitelogo} className={styles.img_size} alt="site logo" />
-    //   </a>
-
-    //   <div className={styles.menu_container}>
-    //     <a className={styles.menu_item} href="">
-    //       Homepage
-    //     </a>
-    //     <a href="" className={styles.menu_item}>
-    //       Categories
-    //     </a>
-    //     <a href="" className={styles.menu_item}>
-    //       Ourblog
-    //     </a>
-    //     <a href="" className={styles.menu_item}>
-    //       Contacts
-    //     </a>
-    //   </div>
-    //   <a href={ROUTES.login} className={styles.header_login}>
-    //     <CiLogin className={styles.loginicon} />
-    //   </a>
-    // </div></div>
   );
 };

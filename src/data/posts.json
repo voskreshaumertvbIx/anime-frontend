@@ -1,0 +1,120 @@
+{
+  "posts": [
+    {
+      "post_id": 1,
+      "link_href": "./",
+      "link_text": "",
+      "image": "./onepiece.png",
+      "title": "",
+      "text": "",
+      "anime": {
+        "anime_id": 1,
+        "englishTitle": "One Piece",
+        "description": "Gol D. Roger, known as the Pirate King, was feared and respected for his incredible strength and prominence in the Grand Line. However, his capture and execution by the World Government brought about dramatic changes felt throughout the world. In his final ...More",
+        "episodesCurrent": 1072,
+        "episodesTotal": 1072,
+        "rating": 9.8,
+        "imagePath": "./",
+        "tags": [
+          {
+            "tag_id": 1,
+            "name": "R"
+          },
+          {
+            "tag_id": 2,
+            "name": "4K"
+          },
+          {
+            "tag_id": 3,
+            "name": "DUB"
+          },
+          {
+            "tag_id": 4,
+            "name": "SUB"
+          }
+        ],
+        "releaseYear": 2024
+      }
+    },
+    {
+      "post_id": 2,
+      "link_href": "./",
+      "link_text": "",
+      "image": "./revengers.png",
+      "title": "",
+      "text": "",
+      "anime": {
+        "anime_id": 1,
+        "englishTitle": "Tokyo Revengers: Christmas Showdown",
+        "description": "Gol D. Roger, known as the Pirate King, was feared and respected for his incredible strength and prominence in the Grand Line. However, his capture and execution by the World Government brought about dramatic changes felt throughout the world. In his final ...More",
+        "episodesCurrent": 4,
+        "episodesTotal": 13,
+        "rating": 9.1,
+        "imagePath": "./",
+        "tags": [
+          {
+            "tag_id": 1,
+            "name": "R"
+          },
+          {
+            "tag_id": 2,
+            "name": "4K"
+          },
+          {
+            "tag_id": 3,
+            "name": "DUB"
+          },
+          {
+            "tag_id": 4,
+            "name": "SUB"
+          }
+        ],
+        "releaseYear": 2024
+      }
+    },
+    {
+      "post_id": 3,
+      "link_href": "./",
+      "link_text": "",
+      "image": "./jujutsu.png",
+      "title": "",
+      "text": "",
+      "anime": {
+        "anime_id": 1,
+        "englishTitle": "JUJUTSU KAISEN Season 2",
+        "description": "Gol D. Roger, known as the Pirate King, was feared and respected for his incredible strength and prominence in the Grand Line. However, his capture and execution by the World Government brought about dramatic changes felt throughout the world. In his final ...More",
+        "episodesCurrent": 1,
+        "episodesTotal": 23,
+        "rating": 8.9,
+        "imagePath": "./",
+        "tags": [
+          {
+            "tag_id": 1,
+            "name": "R"
+          },
+          {
+            "tag_id": 2,
+            "name": "4K"
+          },
+          {
+            "tag_id": 3,
+            "name": "DUB"
+          },
+          {
+            "tag_id": 4,
+            "name": "SUB"
+          }
+        ],
+        "releaseYear": 2024
+      }
+    },
+    {
+      "post_id": 4,
+      "link_href": "./cooperation",
+      "link_text": "Join to us",
+      "image": "./demonslayer.png",
+      "title": "Register as a voice studio",
+      "text": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quo consequuntur error aspernatur corrupti obcaecati, minima consequatur neque molestias, veniam ducimus, maiores laboriosam mollitia dicta praesentium necessitatibus debitis ex blanditiis rerum!"
+    }
+  ]  
+}
