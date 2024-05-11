@@ -18,7 +18,7 @@ const AnimePreview: FC<AnimePreviewProps> = ({ animeData }) => {
     <main className="container">
       <article className={styles.anime_container}>
         <section className={styles.anime_logo}>
-          <img src={dxd} alt="anime_logo" className={styles.img_size} />
+          <img src={`http://localhost:5000/${animeData.imagePath}`} alt="anime_logo" className={styles.img_size} />
         </section>
         <section className={styles.anime_details}>
           <header>
