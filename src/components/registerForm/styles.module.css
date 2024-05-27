@@ -1,0 +1,170 @@
+.registerForm {
+  max-width: clamp(300px, 80%, 900px);
+  max-height: 600px;
+  overflow: hidden;
+
+  display: flex;
+  margin: 5% auto 5%;
+
+  box-shadow: 0px 0px 10px var(--textColor);
+  border-radius: 15px;
+}
+
+.imageContainer {
+  max-width: 50%;
+}
+
+.inputsContainer {
+  padding: 40px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.inputContainer {
+  position: relative;
+}
+
+.inputText {
+  border: 1px solid var(--textColor);
+  border-radius: 15px;
+
+  padding: 0.5rem 1rem;
+  width: 100%;
+}
+
+.showPasswordButton {
+  position: absolute;
+  right: 10px;
+  top: 0;
+  transform: translateY(-50%);
+}
+
+.showPasswordButton * {
+  width: 20px;
+  height: 20px;
+}
+
+/* .formContainer {
+  max-width: clamp(300px, 80%, 900px);
+  max-height: 600px;
+  display: flex;
+  box-shadow: 0px 0px 10px gray;
+  border-radius: 15px;
+}
+
+.imgContainer {
+  overflow: hidden;
+  max-width: clamp(20%, 40%, 50%);
+  border-radius: 15px 0 0 15px;
+}
+
+.loginContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 0 auto;
+  color: white;
+}
+
+.loginName {
+  font-size: 1.875rem;
+  font-weight: bold;
+  margin-bottom: 2rem;
+}
+
+.emailLabel {
+  font-size: 0.875rem;
+}
+
+.inputText {
+  border-width: 1px;
+  border-radius: 0.375rem;
+  border-color: (100, 116, 139);
+  padding: 0.5rem 1rem 0.5rem 1rem;
+  width: 100%;
+}
+
+.fullscreen {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: calc(100vh - 200px);
+}
+
+.labelPassword {
+  font-size: 0.875rem;
+  line-height: 1.25re;
+  margin-top: 10px;
+}
+.passwordInput {
+  position: relative;
+  margin-bottom: 16px;
+}
+
+.passwordInput input {
+  position: relative;
+  padding-right: 40px;
+}
+input {
+  background-color: transparent;
+}
+.showPasswordButton {
+  width: clamp(15px, 20px, 20px);
+  height: clamp(15px, 20px, 20px);
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: transparent;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+}
+
+.showPasswordButton2 {
+  width: clamp(15px, 20px, 20px);
+  height: clamp(15px, 20px, 20px);
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  transform: translateY(-50%);
+  background: transparent;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+}
+.rememberMePos {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+.checkboxSize {
+  width: 1rem;
+  height: 1rem;
+  margin-right: 0.5rem;
+}
+.submitButton {
+  border: 1px solid;
+  background-color: #34d399;
+  border-radius: 0.375rem;
+  height: 3rem;
+  color: #fff;
+  margin-bottom: 2rem;
+  width: 100%;
+}
+
+.submitButton :hover {
+  background-color: #42dd7d;
+}
+.footerP {
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  text-align: center;
+}
+.loginText {
+  font-size: 0.875rem ;
+  line-height: 1.25rem ;
+  color: #f2a663;
+} */

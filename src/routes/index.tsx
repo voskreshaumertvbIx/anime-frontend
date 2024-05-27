@@ -2,8 +2,8 @@ import { Routes, Route } from 'react-router-dom';
 import { LoginPage } from './../pages/loginPage/loginPage';
 import { ROUTES } from './routes';
 import MainPage from '../pages/mainPage/mainPage';
-import AnimePage from '../pages/animePage/animePage';
-import RegisterPage from '../pages/registerPage/registerPage';
+import { AnimePage } from '../pages/animePage/animePage';
+import { RegisterPage } from '../pages/registerPage/registerPage';
 const AppRoutes = () => {
   return (
     <Routes>

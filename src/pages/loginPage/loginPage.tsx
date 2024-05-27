@@ -6,8 +6,8 @@ import { ROUTES } from "../../routes/routes";
 import showPass from "./../../img/icons/show.png";
 import hidePassword from "./../../img/icons/hide.png";
 import { useLoginUserMutation } from "../../redux/services/userSevices";
-import { validateEmail, validatePassword } from "../../services/validation/validationAuth";
-import { ToastContainer, toast } from "react-toastify";
+import { authValidate } from "../../services/validation/validationAuth";
+import { toast } from "react-toastify";
 
 interface LoginPageProps {
   email: string;
@@ -46,44 +46,16 @@ export const LoginPage: React.FC<any> = () => {
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
-    let errorOccurred = false;
-
-    switch (true) {
-      case !email:
-        toast.error("Please enter your email.");
-        errorOccurred = true;
-        break;
-      case !password:
-        toast.error("Please enter your password.");
-        errorOccurred = true;
-        break;
-      case !validateEmail(email):
-        toast.error("Email contains an error example: example@gmail.com");
-        errorOccurred = true;
-        break;
-      case !validatePassword(password):
-        toast.error(
-          "The password must contain at least one number, one lowercase letter and one uppercase letter, and be at least 8 characters long."
-        );
-        errorOccurred = true;
-        break;
-      default:
-        break;
-    }
-
-    if (!errorOccurred) {
+    if (authValidate(email, password, true))
       try {
         const response: { data: any } | { error: any } = await loginUser({
           email,
           password,
         });
-        console.log(response)
         if ("error" in response) {
-          if (response.error.data && response.error.data.message) {
-            toast.error(response.error.data.message);
-          } else {
-            toast.error("Failed to login. Please try again.");
-          }
+          toast.error(
+            response.error.data.message ||
+            "Failed to login. Please try again.")
         } else {
           toast.success("Login successful!");
           localStorage.setItem('access_token', response.data.access_token);
@@ -92,14 +64,13 @@ export const LoginPage: React.FC<any> = () => {
       } catch (error) {
         toast.error("Failed to login. Please try again.");
       }
-    }
   };
 
   return (
     <div className={styles.fullscreen}>
       <div className={styles.formContainer}>
         <div className={styles.imgContainer}>
-          <img src={logo} className="object-cover" alt="logo" />
+          <img src="./images/authForms/forlogin.jpg" className="object-cover" alt="logo" />
         </div>
         <form className={styles.loginContainer} onSubmit={handleSubmit}>
           <h1 className={styles.loginName}>Login to your account</h1>
@@ -173,11 +144,6 @@ export const LoginPage: React.FC<any> = () => {
           </p>
         </form>
       </div>
-      <ToastContainer
-        position="top-center"
-        autoClose={5000}
-        theme="colored"
-      />
     </div>
   );
 };
