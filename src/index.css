@@ -137,3 +137,11 @@ select {
     box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
   }
 }
+div.rti--container{
+  width: 400px!important;
+  
+  
+}
+.rti--tag{
+  background-color:#000!important;
+}

@@ -1,0 +1,83 @@
+::-webkit-scrollbar { /* chrome based */
+  width: 0px;  /* ширина scrollbar'a */
+  background: transparent;  /* опционально */
+}
+
+.form_container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  margin-top: 3rem;
+  border-radius: 15px;
+  border: 2px solid #ccc;
+  background-color: #f9f9f9;
+  color: black;
+  padding: 40px;
+  width: clamp(100px, 80%, 800px);
+  overflow-y: auto;
+}
+
+.form_row {
+  display: flex;
+  flex-direction: column;
+  margin-top: 10px;
+}
+
+.form_input  {
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  background-color: white;
+  padding: 10px;
+  width: 100%;
+  max-width: 400px;
+  color: black;
+  margin-bottom: 5px; /* Add margin bottom for spacing between input and label */
+}
+
+.input_tag{
+  width: 400px;
+  color: black;
+}
+.tag{
+  color:black;
+}
+
+
+.textarea {
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  background-color: white;
+  padding: 10px;
+  width: 100%;
+  max-width: 650px;
+  color: black;
+  margin-bottom: 5px; /* Add margin bottom for spacing between input and label */
+  
+}
+
+.submitCreate{
+  margin-top: 20px;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 10px;
+  background-color: #007bff;
+  color: white;
+  cursor: pointer;
+}
+
+.submitCreate:hover {
+  background-color: #0056b3;
+}
+
+label {
+  font-weight: bold;
+  margin-left: 10px; 
+  color:black
+}
+
