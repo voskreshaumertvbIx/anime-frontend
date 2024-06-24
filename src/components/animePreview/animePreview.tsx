@@ -1,7 +1,4 @@
 import { FC } from "react";
-import { useParams, useNavigate } from "react-router-dom";
-import { ROUTES } from "../../routes/routes";
-import dxd from "./../../img/dxd.jpg";
 import styles from "./style.module.css";
 import { MdOutlineStarBorderPurple500 } from "react-icons/md";
 import { IoCalendar } from "react-icons/io5";
@@ -74,6 +71,10 @@ const AnimePreview: FC<AnimePreviewProps> = ({ animeData }) => {
           </footer>
         </section>
       </article>
+
+
+
+      
     </main>
   );
 };

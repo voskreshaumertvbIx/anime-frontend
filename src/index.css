@@ -99,6 +99,11 @@ select {
 .container {
   margin: 0 auto;
   max-width: var(--containerSize);
+  min-height: calc(100vh - 160px);
+  display: flex;
+  flex-direction: column;
+  align-items:center;
+  justify-content: center;
 }
 
 .dotsContainer {

@@ -4,7 +4,7 @@ export const RegisterPage = () => {
 
   return (
     <main className="container">
-      <RegisterForm />
+      <RegisterForm  />
     </main>
   );
 };

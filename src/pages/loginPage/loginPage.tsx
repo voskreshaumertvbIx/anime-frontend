@@ -28,7 +28,6 @@ export const LoginPage: React.FC<any> = () => {
 
   const [
     loginUser,
-    { isLoading: userLoading, data: userData, error: userError },
   ] = useLoginUserMutation();
 
   const handleChangeValue = (e: React.ChangeEvent<HTMLInputElement>) => {

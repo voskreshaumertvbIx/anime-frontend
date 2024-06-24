@@ -1,9 +1,8 @@
-import { ChangeEvent, SyntheticEvent, useEffect, useRef, useState } from "react";
+import { SyntheticEvent, useEffect, useRef, useState } from "react";
 import { useCreateAnimeMutation } from "../../redux/services/createAnimeApi";
 import { toast } from "react-toastify";
 import styles from "./style.module.css";
 import { TagsInput } from "react-tag-input-component";
-import { current } from "@reduxjs/toolkit";
 export const AnimeCreate = () => {
   const [createAnime] = useCreateAnimeMutation();
   const [selectedFile, setSelectedFile] = useState<File | null>(null);
