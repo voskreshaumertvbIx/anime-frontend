@@ -15,7 +15,7 @@ const RegisterForm = () => {
   });
   const { email, password, confirmPassword } = formValue;
   const [showPassword, setShowPassword] = useState(false);
-  const [isLogin, setLogin] = useState(true); // Set default to true
+  const [isLogin, setLogin] = useState(true); 
   const [registerUser] = useRegisterUserMutation();
   const [loginUser] = useLoginUserMutation();
 

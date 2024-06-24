@@ -2,7 +2,7 @@ export const ROUTES = {
   mainpage: '/',
 
   login: "/login",
-  register: '/register',
+  auth: '/auth',
 
   anime: '/anime/:id',
   genre: '/catalog?genre=fantasy',

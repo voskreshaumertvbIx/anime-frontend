@@ -57,7 +57,7 @@ export const Header = () => {
         <FiSearch className={styles.searchIcon} />
       </div>
       <div className={styles.userInterface}>
-        <a href={ROUTES.register} className={styles.loginLink}>
+        <a href={ROUTES.auth} className={styles.loginLink}>
           Login <FaRegUser className={styles.loginIcon} />
         </a>
         {/* TODO AUTHED TO PROFILE LINK */}

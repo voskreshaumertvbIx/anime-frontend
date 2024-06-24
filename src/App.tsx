@@ -11,7 +11,7 @@ const App = () => {
     <>
       <Header />
       <AppRoutes />
-      {/* <Footer />} */}
+      <Footer />
       <ToastContainer
         position="bottom-left"
         autoClose={5000}
